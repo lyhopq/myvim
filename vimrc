@@ -44,6 +44,9 @@ Bundle 'cespare/vim-golang'
 " To install godef:
 "   go get code.google.com/p/rog-go/exp/cmd/godef
 Bundle 'dgryski/vim-godef'
+let g:godef_split = 2
+"let g:godef_same_file_in_same_window=1
+
 
 " To install gocode:
 "   go get github.com/nsf/gocode
@@ -652,11 +655,11 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS sw=2 sts=2
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags sw=2 sts=2
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags sw=4 sts=4
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
@@ -715,3 +718,10 @@ set nocompatible
 set t_Co=256
 let g:Powerline_symbols = 'fancy' 
 "} 
+
+"Coljure
+Bundle 'vim-scripts/VimClojure'
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
+
+Bundle 'wlangstroth/vim-racket'
